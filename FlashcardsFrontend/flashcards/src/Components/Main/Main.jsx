@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import CardContainer from "../CardContainer/CardContainer";
 
-const Main = (props) => {
+const Main = ({ collections }) => {
   return (
     <div>
-      <Sidebar />
+      <Sidebar collections={collections} />
       <CardContainer />
     </div>
   );

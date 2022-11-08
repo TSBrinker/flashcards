@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
 
-const Sidebar = (props) => {
+const Sidebar = ({ collections }) => {
   return (
     <div>
-      <CollectionContainer />
+      <h2>Collections</h2>
+      <CollectionContainer collections={collections} />
     </div>
   );
 };
