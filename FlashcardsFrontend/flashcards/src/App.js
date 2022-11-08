@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   const [collections, setCollections] = useState([]);
+  const [collectionSelection, setCollectionSelection] = useState(1);
 
   useEffect(() => {
     getAllCollections();
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main collections={collections}/>
+      <Main collections={collections} collectionSelection={collectionSelection} setCollectionSelection={setCollectionSelection}/>
     </div>
   );
 }
