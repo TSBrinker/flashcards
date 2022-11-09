@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
 
 const Sidebar = ({ collections, setCollectionSelection }) => {

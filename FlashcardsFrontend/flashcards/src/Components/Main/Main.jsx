@@ -16,8 +16,6 @@ const Main = ({}) => {
     setCollections(response.data);
   }
 
-  console.log(`Button pressed for collection ${collectionSelection}`);
-
   return (
     <div>
       <Sidebar

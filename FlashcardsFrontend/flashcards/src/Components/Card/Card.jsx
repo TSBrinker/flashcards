@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Card = ({ word, definition }) => {
+const Card = ({ card }) => {
   return (
     <div>
-      {word}:<br />
-      {definition}
+      {card.word}:<br />
+      {card.definition}
       <br />
     </div>
   );

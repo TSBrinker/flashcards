@@ -4,6 +4,7 @@ import axios from "axios";
 
 const CardViewer = ({ collectionSelection }) => {
   const [cards, setCards] = useState([]);
+  const [i, setIndex] = useState(0);
 
   useEffect(() => {
     getCards();
@@ -16,11 +17,17 @@ const CardViewer = ({ collectionSelection }) => {
     setCards(response.data);
   }
 
-  console.log(cards);
+  // console.log(cards);
+  // console.log(i);
+  // console.log(cards[i]);
+  // console.log("here's the active card");
+  // console.log();
 
-  return cards.map((card) => {
-    return <Card word={card.word} definition={card.definition} />;
-  });
+  if (cards.length > 0) {
+    return <Card card={cards[i]} />;
+  } else {
+    return <div>Please select a collection to continue</div>;
+  }
 };
 
 export default CardViewer;
