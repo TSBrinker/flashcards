@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardViewer from "../CardViewer/CardViewer";
 import NewCardForm from "../NewCardForm/NewCardForm";
 
-const CardContainer = (props) => {
+const CardContainer = ({ collectionSelection }) => {
   return (
     <div>
-      <CardViewer />
+      <CardViewer collectionSelection={collectionSelection} />
       <NewCardForm />
     </div>
   );
 };
-
 export default CardContainer;
