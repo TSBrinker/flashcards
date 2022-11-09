@@ -17,14 +17,30 @@ const CardViewer = ({ collectionSelection }) => {
     setCards(response.data);
   }
 
-  // console.log(cards);
-  // console.log(i);
-  // console.log(cards[i]);
-  // console.log("here's the active card");
-  // console.log();
+  function nextCard() {
+    if (i == cards.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex(i + 1);
+    }
+  }
+
+  function previousCard() {
+    if (i == 0) {
+      setIndex(cards.length - 1);
+    } else {
+      setIndex(i - 1);
+    }
+  }
 
   if (cards.length > 0) {
-    return <Card card={cards[i]} />;
+    return (
+      <div>
+        <Card card={cards[i]} />
+        <button onClick={previousCard}> &lt; </button>
+        <button onClick={nextCard}> &gt; </button>
+      </div>
+    );
   } else {
     return <div>Please select a collection to continue</div>;
   }
