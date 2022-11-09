@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Card = ({ card }) => {
-  return (
-    <div>
-      {card.word}:<br />
+const Card = ({ card, setShowDefinition, showDefinition }) => {
+  function flipCard() {
+    setShowDefinition(!showDefinition);
+  }
+
+  return showDefinition ? (
+    <div className="container" onClick={flipCard}>
       {card.definition}
-      <br />
+    </div>
+  ) : (
+    <div className="container" onClick={flipCard}>
+      {card.word}
     </div>
   );
 };

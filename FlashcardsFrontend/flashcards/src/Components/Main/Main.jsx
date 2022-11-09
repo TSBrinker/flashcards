@@ -23,7 +23,6 @@ const Main = ({}) => {
         setCollectionSelection={setCollectionSelection}
       />
       <CardContainer collectionSelection={collectionSelection} />
-      <p>Selected Collection: {collectionSelection}</p>
     </div>
   );
 };

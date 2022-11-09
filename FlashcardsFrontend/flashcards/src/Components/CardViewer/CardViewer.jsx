@@ -5,9 +5,16 @@ import axios from "axios";
 const CardViewer = ({ collectionSelection }) => {
   const [cards, setCards] = useState([]);
   const [i, setIndex] = useState(0);
+  const [showDefinition, setShowDefinition] = useState(false);
+
+  function flipCard() {
+    setShowDefinition(!showDefinition);
+  }
 
   useEffect(() => {
     getCards();
+    setIndex(0);
+    setShowDefinition(false);
   }, [collectionSelection]);
 
   async function getCards() {
@@ -23,6 +30,7 @@ const CardViewer = ({ collectionSelection }) => {
     } else {
       setIndex(i + 1);
     }
+    setShowDefinition(false);
   }
 
   function previousCard() {
@@ -31,18 +39,26 @@ const CardViewer = ({ collectionSelection }) => {
     } else {
       setIndex(i - 1);
     }
+    setShowDefinition(false);
   }
 
   if (cards.length > 0) {
     return (
       <div>
-        <Card card={cards[i]} />
+        <Card
+          card={cards[i]}
+          setShowDefinition={setShowDefinition}
+          showDefinition={showDefinition}
+        />
         <button onClick={previousCard}> &lt; </button>
+        <p>
+          {i + 1} / {cards.length}
+        </p>
         <button onClick={nextCard}> &gt; </button>
       </div>
     );
   } else {
-    return <div>Please select a collection to continue</div>;
+    return <div>Please select a populated collection to continue</div>;
   }
 };
 
