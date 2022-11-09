@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import Collection from "../Collection/Collection";
 
-const CollectionContainer = ({
-  collections,
-  collectionSelection,
-  setCollectionSelection,
-}) => {
+const CollectionContainer = ({ collections, setCollectionSelection }) => {
   return collections.map((collection) => {
     return (
       <Collection
