@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import axios from "axios";
+import DeletePostButton from "../DeletePostButton/DeletePostButton";
 import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 
 const CardViewer = ({ collectionSelection, cards, getCards }) => {
@@ -51,6 +51,15 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
           card={cards[i]}
           collection={collectionSelection}
           getCards={getCards}
+        />
+        <DeletePostButton
+          cards={cards}
+          card={cards[i]}
+          collection={collectionSelection}
+          getCards={getCards}
+          setIndex={setIndex}
+          setShowDefinition={setShowDefinition}
+          i={i}
         />
       </div>
     );

@@ -11,7 +11,7 @@ Main Stories
 <!-- (5 points) As a student, I want to make an Axios GET request to my backend API so that I can see each available flashcard within a collection, including the word and definition of the flashcard.   -->
 <!-- (5 points) As a student, I want to switch between the word and definition on a card whenever I click an empty area on the card. -->
 
-(7.5 points) As a student, I want the ability to create a flashcard through a form and make an Axios POST request to my backend API to create words and definitions in my application.
+<!-- (7.5 points) As a student, I want the ability to create a flashcard through a form and make an Axios POST request to my backend API to create words and definitions in my application. -->
 
 <!-- (7.5 points) As a student, I want the ability to update a flashcard through a form and make an Axios PUT request to my backend API to modify the words and definitions of existing cards. -->
 
