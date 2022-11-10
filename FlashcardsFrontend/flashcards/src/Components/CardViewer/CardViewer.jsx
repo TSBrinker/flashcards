@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import axios from "axios";
+import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 
 const CardViewer = ({ collectionSelection }) => {
   const [cards, setCards] = useState([]);
@@ -55,6 +56,11 @@ const CardViewer = ({ collectionSelection }) => {
           {i + 1} / {cards.length}
         </p>
         <button onClick={nextCard}> &gt; </button>
+        <UpdateCardForm
+          card={cards[i]}
+          collection={collectionSelection}
+          getCards={getCards}
+        />
       </div>
     );
   } else {

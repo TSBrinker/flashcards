@@ -6,13 +6,9 @@ const Card = ({ card, setShowDefinition, showDefinition }) => {
   }
 
   return showDefinition ? (
-    <div className="container" onClick={flipCard}>
-      {card.definition}
-    </div>
+    <div onClick={flipCard}>{card.definition}</div>
   ) : (
-    <div className="container" onClick={flipCard}>
-      {card.word}
-    </div>
+    <div onClick={flipCard}>{card.word}</div>
   );
 };
 
