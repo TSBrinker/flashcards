@@ -15,7 +15,7 @@ Main Stories
 
 <!-- (7.5 points) As a student, I want the ability to update a flashcard through a form and make an Axios PUT request to my backend API to modify the words and definitions of existing cards. -->
 
-(5 points) As a student, I want to delete a flash card in a collection by making an Axios DELETE request, so that I can modify and delete flash cards.
+<!-- (5 points) As a student, I want to delete a flash card in a collection by making an Axios DELETE request, so that I can modify and delete flash cards. -->
 
 <!-- (5 points) As a student, I want the ability to go to the next card in the collection or a previous card in the collection. -->
 <!-- (5 points) As a student, I want to see a count of how many total cards are in a collection as well as what number card is currently active in the collection.  -->
