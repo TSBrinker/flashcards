@@ -6,6 +6,7 @@ import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 const CardViewer = ({ collectionSelection, cards, getCards }) => {
   const [i, setIndex] = useState(0);
   const [showDefinition, setShowDefinition] = useState(false);
+  const [openUpdateForm, setOpenUpdateForm] = useState(false);
 
   useEffect(() => {
     setIndex(0);
@@ -30,8 +31,20 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
     setShowDefinition(false);
   }
 
+  function handleUpdateMenu(event) {
+    event.preventDefault();
+    setOpenUpdateForm(true);
+  }
+
   if (cards[i]) {
-    return (
+    return openUpdateForm ? (
+      <UpdateCardForm
+        card={cards[i]}
+        collection={collectionSelection}
+        getCards={getCards}
+        setOpenUpdateForm={setOpenUpdateForm}
+      />
+    ) : (
       <div>
         <Card
           card={cards[i]}
@@ -43,11 +56,9 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
           {i + 1} / {cards.length}
         </p>
         <button onClick={nextCard}> &gt; </button>
-        <UpdateCardForm
-          card={cards[i]}
-          collection={collectionSelection}
-          getCards={getCards}
-        />
+
+        <button onClick={handleUpdateMenu}>Update This Flashcard</button>
+
         <DeletePostButton
           card={cards[i]}
           collection={collectionSelection}
