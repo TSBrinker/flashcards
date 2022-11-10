@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const NewCardForm = ({ collection, getCards, setDisplay }) => {
+const NewCardForm = ({ collection, getCards, setDisplay, handleDisplay }) => {
   const [cardWord, setCardWord] = useState("");
   const [cardDefinition, setCardDefinition] = useState("");
 
@@ -42,7 +42,8 @@ const NewCardForm = ({ collection, getCards, setDisplay }) => {
         value={cardDefinition}
         onChange={(event) => setCardDefinition(event.target.value)}
       />
-      <button onClick={handleSubmit}>Create New Card</button>
+      <h4 onClick={handleSubmit}>Create New Card</h4>
+      <h4 onClick={(event) => handleDisplay("view", event)}>Cancel</h4>
     </form>
   );
 };

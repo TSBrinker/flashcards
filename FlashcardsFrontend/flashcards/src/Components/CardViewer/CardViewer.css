@@ -1,0 +1,31 @@
+.card-display {
+    border: solid gray 2px;
+    border-radius: 8px;
+    width: 50%;
+    padding: 50px;
+    margin: auto;
+    height: 150px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-display{
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    font-size: 40px;
+    align-items: center;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 20px auto 20px auto;
+    font-size: 40px;
+    align-items: center;
+}

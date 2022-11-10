@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
+import DeleteCardDisplay from "../DeleteCardDisplay/DeleteCardDisplay";
 import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 import NewCardForm from "../NewCardForm/NewCardForm";
+import "./CardViewer.css";
 
 const CardViewer = ({ collectionSelection, cards, getCards }) => {
   const [i, setIndex] = useState(0);
@@ -33,57 +34,77 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
     setShowDefinition(false);
   }
 
-  function handleUpdateMenu(event) {
+  function handleDisplay(setting, event) {
     event.preventDefault();
-    setDisplay("update");
-  }
-
-  function handleCreateMenu(event) {
-    event.preventDefault();
-    setDisplay("create");
+    setDisplay(setting);
   }
 
   if (cards[i]) {
     if (display === "view") {
       return (
         <div>
-          <Card
-            card={cards[i]}
-            setShowDefinition={setShowDefinition}
-            showDefinition={showDefinition}
-          />
-          <h3 onClick={previousCard}> &lt; </h3>
-          <p>
-            {i + 1} / {cards.length}
-          </p>
-          <h3 onClick={nextCard}> &gt; </h3>
-
-          <button onClick={handleUpdateMenu}>Update This Flashcard</button>
-
-          <DeleteCardButton
-            card={cards[i]}
-            collection={collectionSelection}
-            getCards={getCards}
-          />
-          <button onClick={handleCreateMenu}>Create New Flashcard</button>
+          <container className="button-container">
+            <button onClick={(event) => handleDisplay("update", event)}>
+              Update This Card
+            </button>
+            <button onClick={(event) => handleDisplay("delete", event)}>
+              Delete This Card
+            </button>
+          </container>
+          <container className="card-display">
+            <Card
+              card={cards[i]}
+              setShowDefinition={setShowDefinition}
+              showDefinition={showDefinition}
+            />
+          </container>
+          <container className="nav-display">
+            <p onClick={previousCard}> &lt; </p>
+            <p>
+              {i + 1} / {cards.length}
+            </p>
+            <p onClick={nextCard}> &gt; </p>
+          </container>
+          <container className="button-container">
+            <button onClick={(event) => handleDisplay("create", event)}>
+              Create New Flashcard
+            </button>
+          </container>
         </div>
       );
     } else if (display === "update") {
       return (
-        <UpdateCardForm
-          card={cards[i]}
-          collection={collectionSelection}
-          getCards={getCards}
-          setDisplay={setDisplay}
-        />
+        <div className="card-display">
+          <UpdateCardForm
+            card={cards[i]}
+            collection={collectionSelection}
+            getCards={getCards}
+            setDisplay={setDisplay}
+          />
+        </div>
       );
     } else if (display === "create") {
       return (
-        <NewCardForm
-          collection={collectionSelection}
-          getCards={getCards}
-          setDisplay={setDisplay}
-        />
+        <div className="card-display">
+          <NewCardForm
+            collection={collectionSelection}
+            getCards={getCards}
+            setDisplay={setDisplay}
+            handleDisplay={handleDisplay}
+          />
+        </div>
+      );
+    } else if (display === "delete") {
+      return (
+        <div className="card-display">
+          <DeleteCardDisplay
+            card={cards[i]}
+            collection={collectionSelection}
+            getCards={getCards}
+            setDisplay={setDisplay}
+            handleDisplay={handleDisplay}
+          />
+        </div>
       );
     }
   } else {

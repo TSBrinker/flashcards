@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CardViewer from "../CardViewer/CardViewer";
-import NewCardForm from "../NewCardForm/NewCardForm";
 import axios from "axios";
+import "./CardContainer.css";
 
 const CardContainer = ({ collectionSelection }) => {
   const [cards, setCards] = useState([]);

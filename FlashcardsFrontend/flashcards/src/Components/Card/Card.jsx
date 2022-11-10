@@ -1,4 +1,5 @@
 import React from "react";
+import "./Card.css";
 
 const Card = ({ card, setShowDefinition, showDefinition }) => {
   function flipCard() {
@@ -6,9 +7,9 @@ const Card = ({ card, setShowDefinition, showDefinition }) => {
   }
 
   return showDefinition ? (
-    <h4 onClick={flipCard}>{card.definition}</h4>
+    <h2 onClick={flipCard}>{card.definition}</h2>
   ) : (
-    <h3 onClick={flipCard}>{card.word}</h3>
+    <h1 onClick={flipCard}>{card.word}</h1>
   );
 };
 
