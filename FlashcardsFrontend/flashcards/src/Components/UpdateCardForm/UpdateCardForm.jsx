@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import "./UpdateCardForm.css";
 
 const UpdateCardForm = ({ card, collection, getCards, setOpenUpdateForm }) => {
   const [cardWord, setCardWord] = useState(card.word);
@@ -39,12 +40,15 @@ const UpdateCardForm = ({ card, collection, getCards, setOpenUpdateForm }) => {
         value={cardWord}
         onChange={(event) => setCardWord(event.target.value)}
       />
-      <input
-        type="text"
-        value={cardDefinition}
+      <textarea
+        rows="4"
+        cols="50"
+        required
         onChange={(event) => setCardDefinition(event.target.value)}
-      />
-      <button onClick={handleSubmit}>Update Card</button>
+      >
+        {cardDefinition}
+      </textarea>
+      <button onClick={handleSubmit}>Confirm Card Text</button>
     </form>
   );
 };

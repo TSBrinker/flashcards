@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import DeletePostButton from "../DeleteCardButton/DeleteCardButton";
+import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 
 const CardViewer = ({ collectionSelection, cards, getCards }) => {
@@ -59,7 +59,7 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
 
         <button onClick={handleUpdateMenu}>Update This Flashcard</button>
 
-        <DeletePostButton
+        <DeleteCardButton
           card={cards[i]}
           collection={collectionSelection}
           getCards={getCards}
