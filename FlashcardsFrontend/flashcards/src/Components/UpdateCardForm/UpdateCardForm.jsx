@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import "./UpdateCardForm.css";
 
-const UpdateCardForm = ({ card, collection, getCards, setOpenUpdateForm }) => {
+const UpdateCardForm = ({ card, collection, getCards, setDisplay }) => {
   const [cardWord, setCardWord] = useState(card.word);
   const [cardDefinition, setCardDefinition] = useState(card.definition);
 
@@ -30,7 +30,7 @@ const UpdateCardForm = ({ card, collection, getCards, setOpenUpdateForm }) => {
   function handleSubmit(event) {
     event.preventDefault();
     updateCard();
-    setOpenUpdateForm(false);
+    setDisplay("view");
   }
 
   return (

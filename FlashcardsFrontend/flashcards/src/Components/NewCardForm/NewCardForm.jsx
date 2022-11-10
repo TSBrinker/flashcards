@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const NewCardForm = ({ collection, cards, getCards }) => {
-  const [cardWord, setCardWord] = useState();
-  const [cardDefinition, setCardDefinition] = useState();
+const NewCardForm = ({ collection, getCards, setDisplay }) => {
+  const [cardWord, setCardWord] = useState("");
+  const [cardDefinition, setCardDefinition] = useState("");
 
   async function createCard() {
     let newCard = {
@@ -25,6 +25,7 @@ const NewCardForm = ({ collection, cards, getCards }) => {
     createCard();
     setCardDefinition("");
     setCardWord("");
+    setDisplay("view");
   }
 
   return (

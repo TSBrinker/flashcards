@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
+import NewCardForm from "../NewCardForm/NewCardForm";
 
 const CardViewer = ({ collectionSelection, cards, getCards }) => {
   const [i, setIndex] = useState(0);
   const [showDefinition, setShowDefinition] = useState(false);
-  const [openUpdateForm, setOpenUpdateForm] = useState(false);
+  const [display, setDisplay] = useState("view");
 
   useEffect(() => {
     setIndex(0);
     setShowDefinition(false);
+    setDisplay("view");
   }, [collectionSelection, cards]);
 
   function nextCard() {
@@ -33,39 +35,57 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
 
   function handleUpdateMenu(event) {
     event.preventDefault();
-    setOpenUpdateForm(true);
+    setDisplay("update");
+  }
+
+  function handleCreateMenu(event) {
+    event.preventDefault();
+    setDisplay("create");
   }
 
   if (cards[i]) {
-    return openUpdateForm ? (
-      <UpdateCardForm
-        card={cards[i]}
-        collection={collectionSelection}
-        getCards={getCards}
-        setOpenUpdateForm={setOpenUpdateForm}
-      />
-    ) : (
-      <div>
-        <Card
-          card={cards[i]}
-          setShowDefinition={setShowDefinition}
-          showDefinition={showDefinition}
-        />
-        <button onClick={previousCard}> &lt; </button>
-        <p>
-          {i + 1} / {cards.length}
-        </p>
-        <button onClick={nextCard}> &gt; </button>
+    if (display === "view") {
+      return (
+        <div>
+          <Card
+            card={cards[i]}
+            setShowDefinition={setShowDefinition}
+            showDefinition={showDefinition}
+          />
+          <h3 onClick={previousCard}> &lt; </h3>
+          <p>
+            {i + 1} / {cards.length}
+          </p>
+          <h3 onClick={nextCard}> &gt; </h3>
 
-        <button onClick={handleUpdateMenu}>Update This Flashcard</button>
+          <button onClick={handleUpdateMenu}>Update This Flashcard</button>
 
-        <DeleteCardButton
+          <DeleteCardButton
+            card={cards[i]}
+            collection={collectionSelection}
+            getCards={getCards}
+          />
+          <button onClick={handleCreateMenu}>Create New Flashcard</button>
+        </div>
+      );
+    } else if (display === "update") {
+      return (
+        <UpdateCardForm
           card={cards[i]}
           collection={collectionSelection}
           getCards={getCards}
+          setDisplay={setDisplay}
         />
-      </div>
-    );
+      );
+    } else if (display === "create") {
+      return (
+        <NewCardForm
+          collection={collectionSelection}
+          getCards={getCards}
+          setDisplay={setDisplay}
+        />
+      );
+    }
   } else {
     return <div>Please select a populated collection to continue</div>;
   }

@@ -24,11 +24,6 @@ const CardContainer = ({ collectionSelection }) => {
         cards={cards}
         getCards={getCards}
       />
-      <NewCardForm
-        collection={collectionSelection}
-        cards={cards}
-        getCards={getCards}
-      />
     </div>
   );
 };
