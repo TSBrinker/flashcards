@@ -3,8 +3,7 @@ import Card from "../Card/Card";
 import axios from "axios";
 import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 
-const CardViewer = ({ collectionSelection }) => {
-  const [cards, setCards] = useState([]);
+const CardViewer = ({ collectionSelection, cards, getCards }) => {
   const [i, setIndex] = useState(0);
   const [showDefinition, setShowDefinition] = useState(false);
 
@@ -13,17 +12,9 @@ const CardViewer = ({ collectionSelection }) => {
   }
 
   useEffect(() => {
-    getCards();
     setIndex(0);
     setShowDefinition(false);
   }, [collectionSelection]);
-
-  async function getCards() {
-    let response = await axios.get(
-      `http://127.0.0.1:8000/api/collections/${collectionSelection}/cards/`
-    );
-    setCards(response.data);
-  }
 
   function nextCard() {
     if (i == cards.length - 1) {
