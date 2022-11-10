@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Card = ({ card, setShowDefinition, showDefinition }) => {
   function flipCard() {
@@ -6,9 +6,9 @@ const Card = ({ card, setShowDefinition, showDefinition }) => {
   }
 
   return showDefinition ? (
-    <div onClick={flipCard}>{card.definition}</div>
+    <h4 onClick={flipCard}>{card.definition}</h4>
   ) : (
-    <div onClick={flipCard}>{card.word}</div>
+    <h3 onClick={flipCard}>{card.word}</h3>
   );
 };
 

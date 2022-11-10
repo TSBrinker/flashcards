@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import DeletePostButton from "../DeletePostButton/DeletePostButton";
+import DeletePostButton from "../DeleteCardButton/DeleteCardButton";
 import UpdateCardForm from "../UpdateCardForm/UpdateCardForm";
 
 const CardViewer = ({ collectionSelection, cards, getCards }) => {
   const [i, setIndex] = useState(0);
   const [showDefinition, setShowDefinition] = useState(false);
 
-  function flipCard() {
-    setShowDefinition(!showDefinition);
-  }
-
   useEffect(() => {
     setIndex(0);
     setShowDefinition(false);
-  }, [collectionSelection]);
+  }, [collectionSelection, cards]);
 
   function nextCard() {
     if (i == cards.length - 1) {
@@ -34,7 +30,7 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
     setShowDefinition(false);
   }
 
-  if (cards.length > 0) {
+  if (cards[i]) {
     return (
       <div>
         <Card
@@ -53,13 +49,9 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
           getCards={getCards}
         />
         <DeletePostButton
-          cards={cards}
           card={cards[i]}
           collection={collectionSelection}
           getCards={getCards}
-          setIndex={setIndex}
-          setShowDefinition={setShowDefinition}
-          i={i}
         />
       </div>
     );
