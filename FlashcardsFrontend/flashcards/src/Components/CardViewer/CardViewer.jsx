@@ -14,7 +14,7 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
     setIndex(0);
     setShowDefinition(false);
     setDisplay("view");
-  }, [collectionSelection, cards]);
+  }, [collectionSelection, cards.length]);
 
   function nextCard() {
     if (i == cards.length - 1) {
@@ -51,13 +51,13 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
               Delete This Card
             </button>
           </container>
-          <container className="card-display">
+          <span className="card-display">
             <Card
               card={cards[i]}
               setShowDefinition={setShowDefinition}
               showDefinition={showDefinition}
             />
-          </container>
+          </span>
           <container className="nav-display">
             <p onClick={previousCard}> &lt; </p>
             <p>

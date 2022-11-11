@@ -4,10 +4,13 @@ import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <body>
+      <header>
+        <Header />
+      </header>
       <Main />
-    </div>
+      <footer>Boy howdy, this turned out to be kinda fun.</footer>
+    </body>
   );
 }
 
