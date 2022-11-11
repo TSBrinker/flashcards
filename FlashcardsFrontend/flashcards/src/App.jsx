@@ -1,6 +1,8 @@
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
+import Footer from "./Components/Footer/Footer";
 import React from "react";
+import "./App.css";
 
 function App() {
   return (
@@ -9,7 +11,7 @@ function App() {
         <Header />
       </header>
       <Main />
-      <footer>Boy howdy, this turned out to be kinda fun.</footer>
+      <Footer />
     </body>
   );
 }

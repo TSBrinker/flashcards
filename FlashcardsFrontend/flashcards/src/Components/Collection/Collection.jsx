@@ -23,9 +23,9 @@ const Collection = ({
   }, [collectionSelection]);
 
   return (
-    <div className={activeStatus} onClick={handleSelection}>
+    <h3 className={activeStatus} onClick={handleSelection}>
       {name}
-    </div>
+    </h3>
   );
 };
 
