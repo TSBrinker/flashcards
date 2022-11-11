@@ -5,3 +5,13 @@ ul {
 .collection {
     justify-self: left;
 }
+
+.active{
+    background-color: black;
+    color: white;
+    text-indent: 20px;
+}
+
+.inactive{
+    color: white;
+}

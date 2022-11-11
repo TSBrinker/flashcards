@@ -1,0 +1,15 @@
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+textarea{
+    height: 5rem;
+
+}
+
+h4{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

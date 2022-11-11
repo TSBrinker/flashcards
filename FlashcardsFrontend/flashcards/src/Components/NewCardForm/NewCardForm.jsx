@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import "./NewCardForm.css";
 
 const NewCardForm = ({ collection, getCards, setDisplay, handleDisplay }) => {
   const [cardWord, setCardWord] = useState("");
@@ -36,7 +37,7 @@ const NewCardForm = ({ collection, getCards, setDisplay, handleDisplay }) => {
         value={cardWord}
         onChange={(event) => setCardWord(event.target.value)}
       />
-      <input
+      <textarea
         required
         placeholder="Definition"
         value={cardDefinition}

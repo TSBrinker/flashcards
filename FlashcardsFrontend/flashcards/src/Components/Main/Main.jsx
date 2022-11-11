@@ -22,6 +22,7 @@ const Main = ({}) => {
       <Sidebar
         collections={collections}
         setCollectionSelection={setCollectionSelection}
+        collectionSelection={collectionSelection}
       />
       <CardContainer collectionSelection={collectionSelection} />
     </div>
