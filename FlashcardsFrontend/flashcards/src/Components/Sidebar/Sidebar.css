@@ -1,0 +1,6 @@
+.column{
+    float: left;
+    width: 20%;
+    height: calc(100% - 100px);
+
+}

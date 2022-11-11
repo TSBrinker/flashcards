@@ -18,7 +18,7 @@ const CardContainer = ({ collectionSelection }) => {
   }, [collectionSelection]);
 
   return (
-    <div>
+    <div className="CardContainer">
       <CardViewer
         collectionSelection={collectionSelection}
         cards={cards}

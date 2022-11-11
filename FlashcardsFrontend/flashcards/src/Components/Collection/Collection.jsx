@@ -6,7 +6,7 @@ const Collection = ({ name, id, setCollectionSelection }) => {
     setCollectionSelection(id);
   }
 
-  return <button onClick={handleSelection}>{name}</button>;
+  return <div onClick={handleSelection}>{name}</div>;
 };
 
 export default Collection;

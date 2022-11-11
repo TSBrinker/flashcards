@@ -3,7 +3,7 @@ import CollectionContainer from "../CollectionContainer/CollectionContainer";
 
 const Sidebar = ({ collections, setCollectionSelection }) => {
   return (
-    <div>
+    <div className="column">
       <h2>Collections</h2>
       <CollectionContainer
         collections={collections}

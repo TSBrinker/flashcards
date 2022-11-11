@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
 import CardContainer from "../CardContainer/CardContainer";
+import "./Main.css";
 
 const Main = ({}) => {
   const [collections, setCollections] = useState([]);
@@ -17,7 +18,7 @@ const Main = ({}) => {
   }
 
   return (
-    <div>
+    <div className="main-body">
       <Sidebar
         collections={collections}
         setCollectionSelection={setCollectionSelection}

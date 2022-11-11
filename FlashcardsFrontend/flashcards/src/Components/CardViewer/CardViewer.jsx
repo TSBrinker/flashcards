@@ -43,28 +43,30 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
     if (display === "view") {
       return (
         <div>
-          <container className="button-container">
-            <button onClick={(event) => handleDisplay("update", event)}>
-              Update This Card
-            </button>
-            <button onClick={(event) => handleDisplay("delete", event)}>
-              Delete This Card
-            </button>
-          </container>
-          <span className="card-display">
-            <Card
-              card={cards[i]}
-              setShowDefinition={setShowDefinition}
-              showDefinition={showDefinition}
-            />
-          </span>
-          <container className="nav-display">
-            <p onClick={previousCard}> &lt; </p>
-            <p>
-              {i + 1} / {cards.length}
-            </p>
-            <p onClick={nextCard}> &gt; </p>
-          </container>
+          <div className="card-display">
+            <container className="interior-button-container">
+              <button onClick={(event) => handleDisplay("update", event)}>
+                Update This Card
+              </button>
+              <button onClick={(event) => handleDisplay("delete", event)}>
+                Delete This Card
+              </button>
+            </container>
+            <div>
+              <Card
+                card={cards[i]}
+                setShowDefinition={setShowDefinition}
+                showDefinition={showDefinition}
+              />
+            </div>
+            <container className="nav-display">
+              <p onClick={previousCard}> &lt; </p>
+              <p>
+                {i + 1} / {cards.length}
+              </p>
+              <p onClick={nextCard}> &gt; </p>
+            </container>
+          </div>
           <container className="button-container">
             <button onClick={(event) => handleDisplay("create", event)}>
               Create New Flashcard

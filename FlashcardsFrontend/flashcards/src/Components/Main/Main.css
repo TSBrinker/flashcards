@@ -1,0 +1,7 @@
+.main-body{
+    padding-top: 75px;
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 130px);
+    background-color: #8a8ab2;
+}
