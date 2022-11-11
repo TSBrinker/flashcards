@@ -5,11 +5,15 @@ form{
 }
 
 textarea{
-    height: 5rem;
+    height: 8rem;
 
 }
 
 h4{
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+h4:hover{
+    cursor: pointer;
 }

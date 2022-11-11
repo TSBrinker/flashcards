@@ -52,7 +52,7 @@ const CardViewer = ({ collectionSelection, cards, getCards }) => {
                 Delete This Card
               </button>
             </container>
-            <div>
+            <div className="card-info">
               <Card
                 card={cards[i]}
                 setShowDefinition={setShowDefinition}

@@ -4,4 +4,9 @@
     height: 100%;
     background-color: #8a8ab2;
     color: white;
+    margin-left: -20px;
+    margin-top: -8px;
+    border: solid 3px #47476c;
+    display: flex;
+    flex-direction: column;
 }
