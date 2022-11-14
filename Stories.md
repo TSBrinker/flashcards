@@ -1,11 +1,13 @@
 Main Stories
-(5 points) As a developer, I want at least 25 commits with descriptive commit messages.
+
+<!-- (5 points) As a developer, I want at least 25 commits with descriptive commit messages. -->
 
 <!-- (5 points): As a web developer, I want to create a wireframe for my application based on the design assets I have received. -->
 <!-- (5 points) As a developer, I want to create a React app using ‘Create React App’.   -->
 
 (5 points) As a developer, I want to use React.js best practices and function components with React Hooks.
-(5 points) As a developer, I want to use CSS appropriately to make an aesthetically pleasing application.
+
+<!-- (5 points) As a developer, I want to use CSS appropriately to make an aesthetically pleasing application. -->
 
 <!-- (5 points) As a student, I want to make an Axios GET request to my backend API so that I can see each available collection with its title.  -->
 <!-- (5 points) As a student, I want to make an Axios GET request to my backend API so that I can see each available flashcard within a collection, including the word and definition of the flashcard.   -->
